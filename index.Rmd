@@ -28,7 +28,7 @@ Timo Grossenbacher, SRF Data
 
 timo@timogrossenbacher.ch
 
-Präsentation vefügbar unter [grssnbchr.github.io/mazmmt-git](http://grssnbchr.github.io/mazmmt-git)
+Präsentation vefügbar unter [grssnbchr.github.io/mazmmt-git/](http://grssnbchr.github.io/mazmmt-git/)
 
 
 ---
