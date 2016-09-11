@@ -28,7 +28,7 @@ Timo Grossenbacher, SRF Data
 
 timo@timogrossenbacher.ch
 
-Präsentation vefügbar unter [grssnbchr.github.io/mazmmt-git](http://grssnbchr.github.io/mazmmt-git)
+Präsentation vefügbar unter [grssnbchr.github.io/mazmmt-git](http://grssnbchr.github.io/mazmmt-git/)
 
 
 ---
@@ -54,6 +54,8 @@ Seit November 2014 beim Team von SRF Data als **Programmierer** und **Datenjourn
 [@srfdata](http://twitter.com/srfdata)
 
 [Portfolio](http://srf.ch/data)
+
+<aside class="notes">>Was machen wir? Immer wieder interaktive Applikationen und (programmierte) Datenanalyisen - bedingt das Zusammenarbeiten von mehreren Personen am gleichen Projekt / der gleichen Software.</aside>
 
 --- #slide-3-tweet
 
@@ -199,5 +201,7 @@ Gute Lektüre: [Brian Keegan calls out 538 for openness in #ddj](http://www.bria
 timo@timogrossenbacher.ch
 
 Diese Präsentation ist verfügbar (und reproduzierbar) unter [github.com/grssnbchr/mazmmt-git](https://github.com/grssnbchr/mazmmt-git/blob/gh-pages/index.md)
+
+[Handout](https://github.com/grssnbchr/mazmmt-git/blob/gh-pages/Handout_Multimediatag_Grossenbacher.pdf)
 
 <small>Gebaut mit [slidify](https://github.com/ramnathv/slidify) und [revealjs](https://github.com/hakimel/reveal.js/)</small>
