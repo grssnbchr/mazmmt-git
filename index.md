@@ -75,7 +75,8 @@ Ein Beispiel: [Nachrichtendienst-Gesetz](http://www.srf.ch/news/schweiz/abstimmu
 
 --- 
 
-### Die Lösung: Versionskontrollsoftware
+### Die Lösung: 
+### Versionskontrollsoftware
 
 .fragment Moderne Softwareentwicklung findet in Entwicklungsschritten (Iterationen) statt
 
@@ -109,6 +110,8 @@ Ein Beispiel: [Nachrichtendienst-Gesetz](http://www.srf.ch/news/schweiz/abstimmu
 
 .fragment Code und Daten sind in Repositories (= Projekten) organisiert
 
+.fragment Entwicklungsschritt == Commit
+
 .fragment Git funktioniert dezentral - jeder Autor hat eine Kopie des Repo
 
 .fragment Autoren synchronisieren sich gegenseitig (über einen Server wie GitHub - mehr dazu gleich)
@@ -131,7 +134,7 @@ Ein Beispiel: [Nachrichtendienst-Gesetz](http://www.srf.ch/news/schweiz/abstimmu
 
 .fragment Man kann jederzeit von jedem Rechner auf den aktuellen Stand eines Projekts zurückgreifen
 
-.fragment Es lassen sich auch andere Sachen als Code versionieren, z.B. Gesetzestexte
+.fragment Es lässt sich auch anderes als Code versionieren, z.B. Datenbanken oder binäre Dateien (Videos, Bilder)
 
 
 --- 
@@ -186,7 +189,7 @@ Beispiel: Ein Hauptzweig ("master") und verschiedene Zweige für stilistische Va
 
 ### Nachteile / Caveats
 
-.fragment Bedingt gewisses IT-Verständnis und Grundwissen (2-3 Tage initialer Aufwand)
+.fragment Bedingt gewisses IT-Verständnis und Bereitschaft, sich in Git zu vertiefen
 
 .fragment Bedingt regelmässige Anwendung
 
@@ -208,7 +211,7 @@ Beispiel: Ein Hauptzweig ("master") und verschiedene Zweige für stilistische Va
 
 ## Links
 
-[Offizielles Git-Handbuch (auf DE)]( https://git-scm.com/book/de/v1)
+[Offizielles Git-Handbuch (Kapitel 1-4)]( https://git-scm.com/book/de/v1) 
 
 [Explaining the basic concepts of git and how to use github](http://thepilcrow.net/explaining-basic-concepts-git-and-github/)
 

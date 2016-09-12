@@ -75,7 +75,8 @@ Ein Beispiel: [Nachrichtendienst-Gesetz](http://www.srf.ch/news/schweiz/abstimmu
 
 --- 
 
-### Die Lösung: Versionskontrollsoftware
+### Die Lösung: 
+### Versionskontrollsoftware
 
 .fragment Moderne Softwareentwicklung findet in Entwicklungsschritten (Iterationen) statt
 
