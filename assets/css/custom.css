@@ -107,7 +107,7 @@ body {
 }
 
 .reveal a:not(.image) {
-    color: #F2CBB8 !important;
+    color: #F8C271 !important;
     text-decoration: none !important;
     transition: color 0.15s ease 0s;
 }

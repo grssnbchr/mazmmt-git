@@ -15,8 +15,9 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
+### MAZ-Multimediatag 2016
 
-# Git, GitHub und Co.</h2>
+## Git, GitHub und Co.</h2>
 
 ### Was geht mich das an?
 
@@ -55,138 +56,163 @@ Seit November 2014 beim Team von SRF Data als **Programmierer** und **Datenjourn
 
 [Portfolio](http://srf.ch/data)
 
-<aside class="notes">>Was machen wir? Immer wieder interaktive Applikationen und (programmierte) Datenanalyisen - bedingt das Zusammenarbeiten von mehreren Personen am gleichen Projekt / der gleichen Software.</aside>
+Ein Beispiel: [Nachrichtendienst-Gesetz](http://www.srf.ch/news/schweiz/abstimmungen/abstimmungen/nachrichtendienst-gesetz/bringt-das-neue-nachrichtendienst-gesetz-die-massenueberwachung)
 
---- #slide-3-tweet
-
-### Warum Transparenz?
-
-<aside class="notes">Vor ein paar Wochen hat sich eine Schweizer Politikerin bei uns über ein neues Tool beschwert. In diesem Fall war der Vorwurf der Pseudoobjektivität völlig unbegründet - einen wunden Punkt des Datenjournalismus trifft die Dame mit dem Vorwurf jedoch trotzdem.</aside>
-
-Deswegen: 
-
-<blockquote class="twitter-tweet" data-conversation="none" data-cards="hidden" data-partner="tweetdeck"><p lang="de" dir="ltr"><a href="https://twitter.com/brenntr">@brenntr</a> <a href="https://twitter.com/fljan">@fljan</a> <a href="https://twitter.com/srfdata">@srfdata</a> <a href="https://twitter.com/srfnews">@srfnews</a> sag ich doch, das mit dem Datenjournalismus ist eine heikle Sache und mündet zu oft in Pseudoobjektivität</p>&mdash; Jacqueline Badran (@JayBadran) <a href="https://twitter.com/JayBadran/status/613021865007820800">June 22, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<aside class="notes">Was machen wir? Immer wieder interaktive Applikationen und (programmierte) Datenanalysen - bedingt das Zusammenarbeiten von mehreren Personen am gleichen Projekt / der gleichen Software.</aside>
 
 --- 
 
-### Warum Transparenz?
+### Das Problem
 
-<aside class="notes">Datenjournalistische Arbeit kann nur selten ausführlich erklärt werden - schon gar nicht in einem (Zeitungs-)Artikel. Während man bei klassischen Recherchen schnell mal erklären kann, dass man z.B. eine wichtige Info in einer Gerichtsakte gefunden hat, ist es beim DDJ schwieriger.
-Datenjournalisten wissen, dass die Resultate ihrer Arbeit nicht per se objektiver ist als die von anderen Journalisten. Sie sollten sich aber auch bewusst sein, dass beliebig komplexe Auswertungen Gefahr laufen, ihre Objektivität ganz zu verlieren. Nämlich dann, wenn unüberlegt und ungerechtfertigt Entscheidungen getroffen werden, die das Resultat einer Analyse stark verändern könn(t)en. Wenn man diese Schritte nicht transparent macht, dann besteht in der Tat die Gefahr der Pseudoobjektivität. Mit der Offenlegung unserer Methoden machen wir uns zwar angreifbar, aber wir können uns auch besser rechtfertigen. Im Idealfall weisen uns Leser konstruktiv auf Fehler hin, die wir beim nächsten Mal vermeiden können.</aside>
+<aside class="notes">Softwareprojekte sind komplex. Meistens arbeiten mehrere Leute daran, ein Journalist bereitet vielleicht die Daten auf, ein Entwickler baut die Applikation dazu und ein Designer oder ein zweiter Entwickler bestimmt über die jeweiligen Farben und Schriftarten. Dazwischen passt ein anderer Journalist laufend Textbausteine an.</aside>
 
-Zahlen und Visualisierungen von Zahlen haben eine inhärente, oft unhinterfragte "Wahrheit"
+.fragment 1. Wie arbeiten wir in einem Team von 3-5 Leuten effizient zusammen?
 
-.fragment Jeder zusätzliche Prozessierungsschritt bedingt neue *Entscheidungen*<br/> – Gefahr der **"Pseudo-Objektivität"** steigt
+.fragment 2. Wie stellen wir sicher, dass wir unsere Daten und unseren Code nicht verlieren?
 
-.fragment Das **Problem**: Datenjournalistische Arbeit kann nur selten ausführlich erklärt werden
-
-.fragment Interessierte sollten die Chance erhalten, uns zu hinterfragen *und* uns zu korrigieren
-
----
-
-### Stufen der Transparenz
-
-<aside class="notes">Transparenz kann man verschiedentlich auslegen, ich habe einmal versucht, eine Abstufung zu machen. Jede Stufe bedingt mehr oder weniger die vorhergehenden Stufen.</aside>
-
-.fragment 1. Quellenangaben (leider nicht selbstverständlich...)
-
-.fragment 2. Beschreibung und Rechtfertigung der Methoden, z.B. mit einem [Werkstattbericht](http://www.digitalerwandel.de/2013/04/23/wir-bauen-uns-eine-nachrichtenquelle-werkstattbericht-zum-flugrouten-radar/)
-
-.fragment 3. Offenlegung der Rohdaten und prozessierten Daten (z.B. wie bei [fivethirtyeight.com](https://github.com/fivethirtyeight/data))
-
-.fragment 4. Offenlegung der Methoden, volle *Reproduzierbarkeit* (z.B. wie bei der [NPR Military Gear Story](http://blog.apps.npr.org/2014/09/02/reusable-data-processing.html))
-
+.fragment 3. Wie können wir unsere Analysen und Daten möglichst einfach veröffentlichen und reproduzierbar machen? 
 
 
 --- 
 
-### Reproduzierbarkeit?
+### Die Lösung: Versionskontrollsoftware
 
-<aside class="notes">Ohne Reproduzierbarkeit keine echte, vollständige Transparenz. Richtige Reproduzierbarkeit bedingt, dass von den absoluten Rohdaten bis zum (analytischen) Endergebnis alle Schritte nachvollziehbar und ausführbar sind. Eigentlich ist dies nur zu erreichen, wenn man die Schritte "aufzeichnet", und dafür eignet sich am besten Code: Sprich, die Datenanalyse selber besteht aus einem Skript, dass einen Input nimmt und einen Output generiert. Das bringt zwei Vorteile mit sich: Man kann das Skript wiederverwenden, z.B. bei neuen Daten. Und das ganze ist automatisiert, sprich, wir können Kaffee trinken gehen, während der Computer rechnet. Die Automatisierung kann wiederum dabei helfen, Fehler zu vermeiden, die man beim manuellen Bearbeiten, z.B. bei Unkonzentriertheit, machen könnte.</aside>
+.fragment Moderne Softwareentwicklung findet in Entwicklungsschritten (Iterationen) statt
 
-.fragment ... von einem bestimmten Input immer zum gleichen Output gelangen
+.fragment z.B.: Neue Features, Fehler beheben (Bugfixing), neuer Datensatz, usw.
 
-.fragment ... alles nachvollziehen können
+.fragment Jeder Entwicklungsschritt hat einen Autor
 
-.fragment ... darauf aufbauen können
+.fragment Jeder Entwicklungsschritt kann ein oder mehrere Dateien umfassen
 
-.fragment **Nebeneffekte**:
+.fragment Keine Angst: Beispiel kommt gleich :-) 
 
-.fragment 1. Transparenz
+---
 
-.fragment 2. Wiederverwendbarkeit / Automatisierung 
+### Git 1/2
 
-.fragment 2b. Reduzierte Fehleranfälligkeit
+.fragment Vor rund 10 Jahren von Linus Torvalds, dem Erfinder von Linux, entwickelt
+
+.fragment Es gibt auch andere, z.B. SVN oder Mercurial, aber Git ist die populärste Software
+
+.fragment Free and Open Source - von jedermann auf jedem Rechner gratis installierbar
+
+
+<img src="assets/img/gitlogo.png" style="width: 300px;" />
+
+<aside class="notes">Git gibt es in seiner heutigen Form seit rund 10 Jahren und – wer hätte es gedacht – wurde von Linus Torvalds, dem Erfinder von Linux, höchstpersönlich auf die Welt gesetzt. Er nutzte das System vorderhand, um den immer unübersichtlicher gewordenen Quellcode von Linux besser zu verwalten. Git ist FOSS (Free and Open Source Software) und daher durch jedermann auf jedem Rechner installier- und verwendbar. </aside>
+
+
+---
+
+### Git 2/2
+
+.fragment Code und Daten sind in Repositories (= Projekten) organisiert
+
+.fragment Git funktioniert dezentral - jeder Autor hat eine Kopie des Repo
+
+.fragment Autoren synchronisieren sich gegenseitig (über einen Server wie GitHub - mehr dazu gleich)
+
+.fragment ![git log](assets/img/distributed-vc.jpg)
+
+.fragment <small>Angepasst von: http://thepilcrow.net/explaining-basic-concepts-git-and-github/</small>
+
+---
+
+### Demo: NDG
+
+![git log](assets/img/gitlog.png)
+
+
+---
+
+
+### Weitere Vorteile
+
+.fragment Man kann jederzeit von jedem Rechner auf den aktuellen Stand eines Projekts zurückgreifen
+
+.fragment Es lassen sich auch andere Sachen als Code versionieren, z.B. Gesetzestexte
+
 
 --- 
 
-### Genug der Theorie!!! 
+### Was ist GitHub? 
 
-<aside class="notes">Im folgenden nun ein Beispiel, wie wir bei SRF Data konkret versuchen, das zu leben, was ich hier predige.</aside>
+.fragment GitHub ist ein **Server** für Git
 
-![Gute Nacht](assets/img/sleeping.jpg)
+.fragment ![git log](assets/img/distributed-vc-github.jpg)
 
-<small>Bildquelle: Flickr.com</small>
+.fragment <small>Angepasst von: http://thepilcrow.net/explaining-basic-concepts-git-and-github/</small>
 
----
+.fragment GitHub vereinfacht den Austausch zwischen Autoren eines Repositories - man muss keinen eigenen Server aufsetzen
 
-### Wie wir versuchen, transparent zu sein
-
-<aside class="notes">Im selben Zug möchte ich zwei Tools bzw. Ideen präsentieren, wie man mit Technologie Transparenz schaffen kann.</aside>
-
-(und effizient zu arbeiten...)
-
-[R](http://r-project.org) / [RMarkdown](http://rmarkdown.rstudio.com/)
-
-[GitHub](http://github.com)
-
----
-
-### Transparenz & Open Data
-
-[SRF Data auf GitHub](http://srfdata.github.io)
-![srfdata.github.io](assets/img/srfdatagithub.png)
+.fragment Weiteres: Zugriffsberechtigungen, Koordination von Open-Source-Projekten, Bugtracker, usw.
 
 --- 
 
-### Eidgenössische Wahlen 2015
+### GitHub und Open Source
 
-![Wahlen](assets/img/entscheidung.jpg)
+.fragment These: Ohne GitHub wäre Open Source heute nicht so populär
+
+.fragment [srfdata.github.io](https://srfdata.github.io)
+
+.fragment Aber: Auch das Verwalten von privaten Repositories ist möglich
+
+
+
+--- 
+
+### Exkurs: Branching
+
+.fragment Repositories können in "Zweige" (Branches) aufgeteilt werden
+
+.fragment Verschiedene Autoren arbeiten an unterschiedlichen Zweigen, die (allenfalls) wieder zusammenwachsen (gemerged werden)
+
+.fragment Das "Zusammenwachsen" einer Datei verläuft i.d.R. reibungslos, wenn sie an unterschiedlichen Orten (Zeilen) geändert wurde
+
+![branch](assets/img/branches.png)
+
+<small>Quelle: http://rogerdudler.github.io/git-guide/index.de.html</small>
+
+--- 
+
+### Demo: Branching
+
+Beispiel: Ein Hauptzweig ("master") und verschiedene Zweige für stilistische Variationen
+
+![branch](assets/img/branch-1603.png)
 
 ---
 
-### Demo
+### Nachteile / Caveats
+
+.fragment Bedingt gewisses IT-Verständnis und Grundwissen (2-3 Tage initialer Aufwand)
+
+.fragment Bedingt regelmässige Anwendung
+
+.fragment Empfohlene Systemumgebung: UNIX (Mac, Linux)
+
+.fragment Vorsicht beim Hosten von sensiblen Datensätzen! 
 
 ---
 
-### Fazit
+### Wie weiter - meine Empfehlung
 
-**R** ermöglicht uns:
+.fragment Mal bei Entwicklern im Haus nachfragen, welche Versionskontrollsoftware sie einsetzen - und wie 
 
-* alle Prozessierungsschritte an einem Ort zu *bündeln*
-    * einlesen
-    * vorprozessieren
-    * auswerten
-    * visualisieren
-    * vorbereiten / transformieren
-    * ...
-    * (Twitter / interaktive Grafiken & Karten / ...)
- 
-* Beschreibung der Daten und Methoden mit **Markdown**
+.fragment Tutorials und Manuals studieren (1-3 Tage)
 
-* Publikation der Daten und Methoden auf **[GitHub / GitHubPages](http://srfdata.github.io)**
-
+.fragment Entwicklung einer Applikation "im Code" begleiten und sich von Entwicklern unterstützen lassen
 
 ---
 
-## Lust auf mehr?
+## Links
 
-[rddj.info - damit bringt Ihr Euch R bei](http://rddj.info)
+[Offizielles Git-Handbuch (auf DE)]( https://git-scm.com/book/de/v1)
 
-[grssnbchr/rddj-reproducibility-workflow](https://github.com/grssnbchr/rddj-reproducibility-workflow)
+[Explaining the basic concepts of git and how to use github](http://thepilcrow.net/explaining-basic-concepts-git-and-github/)
 
-Gute Lektüre: [Brian Keegan calls out 538 for openness in #ddj](http://www.brianckeegan.com/2014/04/the-need-for-openness-in-data-journalism/)
+[Handout](https://github.com/grssnbchr/mazmmt-git/blob/gh-pages/Handout_Multimediatag_Grossenbacher.pdf)
 
 ---
 
@@ -201,7 +227,5 @@ Gute Lektüre: [Brian Keegan calls out 538 for openness in #ddj](http://www.bria
 timo@timogrossenbacher.ch
 
 Diese Präsentation ist verfügbar (und reproduzierbar) unter [github.com/grssnbchr/mazmmt-git](https://github.com/grssnbchr/mazmmt-git/blob/gh-pages/index.md)
-
-[Handout](https://github.com/grssnbchr/mazmmt-git/blob/gh-pages/Handout_Multimediatag_Grossenbacher.pdf)
 
 <small>Gebaut mit [slidify](https://github.com/ramnathv/slidify) und [revealjs](https://github.com/hakimel/reveal.js/)</small>
