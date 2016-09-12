@@ -54,7 +54,7 @@ Seit November 2014 beim Team von SRF Data als **Programmierer** und **Datenjourn
 
 [@srfdata](http://twitter.com/srfdata)
 
-[Portfolio](http://srf.ch/data)
+[Portfolio auf srf.ch/data](http://srf.ch/data)
 
 Ein Beispiel: [Nachrichtendienst-Gesetz](http://www.srf.ch/news/schweiz/abstimmungen/abstimmungen/nachrichtendienst-gesetz/bringt-das-neue-nachrichtendienst-gesetz-die-massenueberwachung)
 
@@ -161,6 +161,7 @@ Ein Beispiel: [Nachrichtendienst-Gesetz](http://www.srf.ch/news/schweiz/abstimmu
 
 .fragment Aber: Auch das Verwalten von privaten Repositories ist möglich
 
+.fragment Alternative: BitBucket.org
 
 
 --- 
