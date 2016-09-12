@@ -84,7 +84,7 @@ Ein Beispiel: [Nachrichtendienst-Gesetz](http://www.srf.ch/news/schweiz/abstimmu
 
 .fragment Jeder Entwicklungsschritt hat einen Autor
 
-.fragment Jeder Entwicklungsschritt kann ein oder mehrere Dateien umfassen
+.fragment Jeder Entwicklungsschritt kann eine oder mehrere Dateien umfassen
 
 .fragment Keine Angst: Beispiel kommt gleich :-) 
 
